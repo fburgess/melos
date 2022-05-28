@@ -2,8 +2,9 @@ class Customer < ApplicationRecord
 
     has_many :reviews
     has_many :orders
-    has_many :menu_item, through: :reviews
-    has_many :cmenu_items, through: :order
+    has_many :order_histories
+    has_many :menu_items, through: :reviews
+    has_many :menu_items, through: :orders
 
     # has_secure_password
     # validates :username, presence: true, uniqueness: true
