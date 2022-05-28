@@ -3,11 +3,14 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
+import Menu from "./Components/Menu";
+import SignInPage from "./Components/SignInPage";
+
 
 
 function App() {
 
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
 
 
@@ -19,11 +22,17 @@ function App() {
   
     return (
         <Router>
-             <Navbar  />
+             <Navbar user={user} setUser={setUser}  />
               <Switch>
                <Route exact path="/">
                   <Home />
                </Route> 
+               <Route exact path="/menu">
+                  <Menu />
+               </Route>
+               <Route exact path="/signin">
+                  <SignInPage/>
+               </Route>
               </Switch> 
           </Router>
       );    

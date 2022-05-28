@@ -7,7 +7,7 @@ function Home() {
     
     <div class="home">
 
-          <div>
+          <div class="intro-home">
             <h1>Welcome To Melo's Jamaican Joint</h1>
 
             <h3> We are pleased that you have taken the time out to visit us and give us a try.

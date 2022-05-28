@@ -8,31 +8,40 @@ function Navbar({user, setUser}) {
   }
 
   if(!user) 
-    return(
-      <header>
-      <div class="logo">
-        <h1 class="logo-name">Melo's Jamaican Joint </h1>
-        <h5 class="logo-sub">"Just Another Day In Paradise"</h5>
-      </div>
-      
-    </header>
-    )
-    else{
-  return (
+  return(
     <header>
-      <div class="logo">
-
+      <div>
         <h1 class="logo-name">Melo's Jamaican Joint </h1>
         <h5 class="logo-sub">"Just Another Day In Paradise"</h5>
       </div>
-      <nav class="nav-bar">
+       
+        <div class="container green borderXwidth">
+          <Link to="/">Home</Link>
+          <Link to="/menu">Menu</Link>
+          <Link to="/">Ratings</Link>
+          <Link to="/signin">Sign-In</Link>
+        </div>
+    
+  </header>
+  )
+  else{
+  return (
+  
+      <header>
+          <div>
+          <h1 class="logo-name">Melo's Jamaican Joint </h1>
+          <h5 class="logo-sub">"Just Another Day In Paradise"</h5>
+          </div>
+       
 
-        <Link to="/">||Home</Link>
-        <Link to="/">||Menu</Link>
-        <Link to="/">||Ratings</Link>
-        <Link to="/" onClick={handleLogout}>||Logout||</Link>
-      </nav>
-    </header>
+        <div class="container green borderXwidth">
+          <Link to="/">Home</Link>
+          <Link to="/menu">Menu</Link>
+          <Link to="/">Ratings</Link>
+          <Link to="/" onClick={handleLogout}>Logout</Link>
+        </div>
+
+      </header>
 
   );
 }}

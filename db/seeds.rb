@@ -41,114 +41,114 @@ MenuItem.create([
     name: "Jerk Pork",
     price: "12.00",
     category: "Pork",
-    image: ""
+    image: "/Menupix/jerk-pork.jpeg"
   },
   {
     
     name: "Oxtail & Butter Bean",
     price: "15.00",
     category: "Beef",
-    image: ""
+    image: "/Menupix/oxtail.jpeg"
   },
   {
     name: "Snapper Fish",
     price: "18.00",
     category: "Fish",
-    image: ""
+    image: "/Menupix/Brown-Stew-Snapper.jpeg"
   },
   {
     name: "Stew Pork",
     price: "12.00",
     category: "Pork",
-    image: ""
+    image: "/Menupix/stew-pork.png"
   },
   {
     
     name: "Fried Chicken",
     price: "10.00",
     category: "Chicken",
-    image: ""
+    image: "/Menupix/Fried-Chicken.jpeg"
   },
   {
     name: "Brown Stew Chicken",
     price: "10.00",
     category: "Chicken",
-    image: ""
+    image: "/Menupix/stew-chicken.jpeg"
   },
   {
     
     name: "Mac & Cheese",
     price: "3.00",
     category: "Sides",
-    image: ""
+    image: "/Menupix/mac-cheese.jpeg"
   },
   {
     name: "Patty & Coco Bread",
     price: "5.00",
     category: "Sides",
-    image: ""
+    image: "/Menupix/Patty-coco-bread.webp"
   },
   {
     name: "Corn Bread",
     price: "3.00",
     category: "Sides",
-    image: ""
+    image: "/Menupix/cornbread.jpeg"
   },
   {
     
     name: "Plantains",
     price: "2.00",
     category: "Sides",
-    image: ""
+    image: "/Menupix/fried-plantains.jpeg"
   },
   {
     name: "Sweet Potato Pudding",
     price: "3.00",
     category: "Sides",
-    image: ""
+    image: "/Menupix/Sweet-Potato-Pudding.jpeg"
   },
   {
     name: "Beet Juice",
     price: "5.00",
     category: "Juice",
-    image: ""
+    image: "/Menupix/beet-juice.jpeg"
   },
   {
     name: "Carrot & Beet Juice",
     price: "3.00",
     category: "Juice",
-    image: ""
+    image: "/Menupix/carrott-beet.jpeg"
   },
   {
     
     name: "Pineapple & Ginger Juice",
     price: "5.00",
     category: "Juice",
-    image: ""
+    image: "/Menupix/Pineapple-Ginger.jpeg"
   },
   {
     name: "Cucumber Juice",
     price: "5.00",
     category: "Juice",
-    image: ""
+    image: "/Menupix/cucumber-juice.jpeg"
   },
   {
     name: "Sorrel Drink",
     price: "5.00",
     category: "Juice",
-    image: ""
+    image: "/Menupix/sorrel.jpeg"
   },
   {
     name: "Carrot Juice",
     price: "5.00",
     category: "Juice",
-    image: ""
+    image: "/Menupix/carrot.jpeg"
   },
   {
     name: "Bottle Water",
     price: "1.25",
     category: "Juice",
-    image: ""
+    image: "/Menupix/WATA.jpeg"
   }
 ])
 
