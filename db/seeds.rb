@@ -35,7 +35,7 @@ MenuItem.create([
     name: "Jerk Chicken",
     price: "10.00",
     category: "Chicken",
-    image: ""
+    image: "/Menupix/jerk-chicken.jpeg"
   },
   {
     name: "Jerk Pork",
@@ -189,19 +189,21 @@ Review.create([
 puts "Seeding Order..."
 Order.create([
   {
+    total: "10.00",
     customer_id: 1,
-    menu_item_id: 1,
-    total: "10.00"
+    menu_item_id: 1
+    
   },
   {
+    total: "15.00",
     customer_id: 3,
-    menu_item_id: 5,
-    total: "15.00"
+    menu_item_id: 5
   },
   {
+    total: "18.00",
     customer_id: 4,
-    menu_item_id: 6,
-    total: "18.00"
+    menu_item_id: 6
+    
   }
 
 ])
@@ -209,15 +211,19 @@ Order.create([
 puts "Seeding Order_History..."
 OrderHistory.create([
   {
-    order_id: 1
+    order_id: 1,
+    customer_id:1
    
   },
   {
-    order_id: 2
+    order_id: 2,
+    customer_id:3
   
   },
   {
-    order_id: 3
+    order_id: 3,
+    customer_id:4
+
     
   }
 ])

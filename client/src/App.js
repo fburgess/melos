@@ -1,25 +1,63 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+  // const [user, setUser] = useState(null);
+
+
+
+
+
+
+
+
+  
+    return (
+        <Router>
+             <Navbar  />
+              <Switch>
+               <Route exact path="/">
+                  <Home />
+               </Route> 
+              </Switch> 
+          </Router>
+      );    
+    
+    // return (
+
+    //   <Router>
+    //       <Navbar user={user} setUser={setUser} />
+    //     <Switch>
+    //         <Route exact path="/">
+    //           <Home />
+    //         </Route>
+    //         <Route exact path="/concerts">
+    //           <ConcertHomePage />
+    //         </Route>
+    //       <Route exact path="/concerts/:id">
+    //           <Concert commentData={commentData} setCommentData={setCommentData} addComment={addComment}/>
+    //             {/* <Comments /> */}
+    //       </Route>  
+    //       <Route exact path="/comments">
+    //           <Comments commentData={commentData} setCommentData={setCommentData} addComment={addComment} />
+    //       </Route>
+    //       <Route    path="/comments/:id/edit"
+    //               render={({ match }) => (
+    //                     <CommentEditForm
+    //                         comment={commentData.find((comment) => comment.id === parseInt(match.params.id))}
+    //                         updateComment={updateComment}
+    //                     />
+    //               )}
+    //        /> 
+    //     </Switch> 
+    //   </Router>
+    // );
+  }
+  
+  export default App;
+
