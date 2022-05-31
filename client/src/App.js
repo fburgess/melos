@@ -31,7 +31,7 @@ function App() {
                   <Menu />
                </Route>
                <Route exact path="/signin">
-                  <SignInPage/>
+                  <SignInPage onLogin={setUser} />
                </Route>
               </Switch> 
           </Router>

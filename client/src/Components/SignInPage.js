@@ -4,14 +4,14 @@ import React from 'react';
 import Login from "./Login";
 import SignUp from "./SignUp";
 
-function SignInPage() {
-    const [user, setUser] = useState(null);
+function SignInPage({onLogin}) {
+    // const [user, setUser] = useState(null);
 
   return (
     
     <div class="">
-      <Login></Login>
-      <SignUp></SignUp>
+      <Login onLogin={onLogin} ></Login>
+      <SignUp onLogin={onLogin} ></SignUp>
       
     </div>
   );

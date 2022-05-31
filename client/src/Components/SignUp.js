@@ -18,7 +18,7 @@ function Signup({ onLogin }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name,
+        username: name,
         password,
         password_confirmation: passwordConfirmation,
       }),
@@ -72,9 +72,9 @@ function Signup({ onLogin }) {
         <button class="btn btn-primary btn-block btn-large" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
       </formField>
       <formField>
-        {errors.map((err) => (
+        {errors ? errors.map((err) => (
           <error key={err}>{err}</error>
-        ))}
+        )) : 'Error Occured'}
       </formField>
     </form>
     <div class="btm-space"></div>
