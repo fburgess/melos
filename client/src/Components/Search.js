@@ -10,7 +10,7 @@ function Search({ setQuery }) {
         className="fas"
         type="text"
         id="search"
-        placeholder=" Type a genre to search..."
+        placeholder=" Type food category to search..."
         onChange={(e) => setQuery(e.target.value)}
       />
       </div>

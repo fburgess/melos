@@ -18,7 +18,6 @@ function Navbar({user, setUser}) {
         <div class="container green borderXwidth">
           <Link to="/">Home</Link>
           <Link to="/menu">Menu</Link>
-          <Link to="/">Ratings</Link>
           <Link to="/signin">Sign-In</Link>
         </div>
     
@@ -37,7 +36,7 @@ function Navbar({user, setUser}) {
         <div class="container green borderXwidth">
           <Link to="/">Home</Link>
           <Link to="/menu">Menu</Link>
-          <Link to="/">Ratings</Link>
+          <Link to="/Cart">Cart</Link>
           <Link to="/" onClick={handleLogout}>Logout</Link>
         </div>
 

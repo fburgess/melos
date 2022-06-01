@@ -34,30 +34,31 @@ function Signup({ onLogin }) {
 
   return (
   
-    <div class="sign-up-form">
-      <h2 class="signup-label">If you do not have an account with us, please sign up below</h2>
-      <h1 class="signup-label"> Sign-Up Here:</h1>
-    <form  onSubmit={handleSubmit}>
-      <formField>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="name"
-          autoComplete="off"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </formField>
-      <formField>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
-        />
-      </formField>
+    <div class="form sign-up">
+      <h2>Create your Account</h2>
+      <form  onSubmit={handleSubmit}>
+          <formField>
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="name"
+              autoComplete="off"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </formField>
+
+          <formField>
+           <label htmlFor="password">Password</label>
+           <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+            />
+         </formField>
+
       <formField>
         <label htmlFor="password">Password Confirmation</label>
         <input
@@ -69,7 +70,7 @@ function Signup({ onLogin }) {
         />
       </formField>
       <formField>
-        <button class="btn btn-primary btn-block btn-large" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+        <button class="submit" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
       </formField>
       <formField>
         {errors ? errors.map((err) => (
@@ -77,7 +78,7 @@ function Signup({ onLogin }) {
         )) : 'Error Occured'}
       </formField>
     </form>
-    <div class="btm-space"></div>
+      
     </div>
   );
 }
