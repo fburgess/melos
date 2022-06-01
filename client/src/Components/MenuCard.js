@@ -14,8 +14,8 @@ function MenuCard({key, id, name, image, category, price}) {
                   <div class="con">
                     <p>Category: {category}</p>
                     <p>Price: {price}</p>
-                    <Link to={`/concerts/${id}`}><button class="button-85">See More</button></Link><br></br>
-                    <Link to={`/comments`}><button button class="button-85">Comment</button></Link>
+                    <Link to={`/cart`}><button class="cart-btn">Add to Cart</button></Link><br></br>
+                    <Link to={`/ratings/${id}`}><button button class="rating-btn">Rating</button></Link>
                   </div>
           </div>
          

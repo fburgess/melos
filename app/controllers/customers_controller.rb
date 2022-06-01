@@ -1,7 +1,15 @@
 class CustomersController < ApplicationController
+skip_before_action :authorize, only: [:create]
 
 
-  def index
+ def create
+     customer = Customer.create!(customer_params)
+     session[:customer_id] = customer.id
+     render json: customer, status: :created
+end
+
+
+def index
     render json: Customer.all
 end
 
@@ -13,31 +21,16 @@ def show
     else
          render json: { error: "Nothing here!"}, status: :not_found
     end
- end
 
+end
 
-
-
-    # skip_before_action :authorize, only: [:create]
+private
   
-    # def create
-    #   user = Customer.create!(customer_params)
-    #   session[:customer_id] = customer.id
-    #   render json: customer, status: :created
-    # end
+def customer_params
+     params.permit(:username, :password)
+end
 
-    # def index
-    #     render json: Customer.all
-    # end
 
-    # def show
-    #   render json: @current_customer
-    # end
 
-    # private
-  
-    # def user_params
-    #   params.permit(:username, :password, :password_confirmation)
-    # end 
 
 end
