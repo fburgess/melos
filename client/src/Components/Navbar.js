@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 function Navbar({user, setUser}) {
+  const [cartCount, setCartCount] = useState(0);
+
   function handleLogout() {
     fetch("/logout",{
       method: "DELETE",
     }).then(() => setUser())
+  }
+
+  function getCartCount() {
+    setInterval(() => {
+      let cartObject = window.localStorage.getItem('cart');
+
+      let cart = [];
+      
+      if (cart) {
+        cart = JSON.parse(cartObject);
+      }
+    }, 5000)
   }
 
   if(!user) 
