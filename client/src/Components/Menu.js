@@ -4,7 +4,7 @@ import Search from "./Search";
 import MenuList from "./MenuList";
 
 
-function Menu({renderMenuItems}) {
+function Menu({renderMenuItems, user}) {
     const [menu_items, setMenu] = useState([]);
     const [query, setQuery] = useState("");
   
@@ -22,7 +22,7 @@ function Menu({renderMenuItems}) {
       <section className="container">
       <Search setQuery={setQuery}/>
 
-      <MenuList items={filterMenuItems} renderMenuItems={renderMenuItems}/>
+      <MenuList items={filterMenuItems} renderMenuItems={renderMenuItems} user= {user}/>
       </section>
     );
   }

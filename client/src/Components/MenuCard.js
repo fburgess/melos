@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-function MenuCard({key, id, name, image, category, price}) {
+function MenuCard({key, id, name, image, category, price, user}) {
    
   function addToCart(e) {
     e.preventDefault();
@@ -11,15 +11,17 @@ function MenuCard({key, id, name, image, category, price}) {
 
     let cart = [];
     
-    if (cart)
-    JSON.parse(cartObject);
+    if (cartObject) {
+      cart = JSON.parse(cartObject)
+    }
 
     cart.push({
       id,
       name,
       image,
       category,
-      price
+      price,
+      quantity: 1
     });
 
     window.localStorage.setItem('cart', JSON.stringify(cart));
@@ -37,8 +39,11 @@ function MenuCard({key, id, name, image, category, price}) {
                   <div class="con">
                     <p>Category: {category}</p>
                     <p>Price: {price}</p>
-                    <button class="cart-btn" onClick={addToCart}>Add to Cart</button><br></br>
-                    <Link to={`/ratings/${id}`}><button button class="rating-btn">Rating</button></Link>
+                    <Link to={`/ratings/${id}`}><button button class="rating-btn">Rating</button></Link><br></br>
+                    {user ? 
+                    <button class="cart-btn" onClick={addToCart}>Add to Cart</button>
+                    : "Sign In to order"}
+                    
                   </div>
           </div>
          

@@ -8,6 +8,7 @@ import Menu from "./Components/Menu";
 import SignInPage from "./Components/SignInPage";
 import Cart from "./Components/Cart";
 import Ratings from "./Components/Ratings";
+import OrderHistory from "./Components/OrderHistory";
 
 
 
@@ -50,11 +51,6 @@ function App() {
   }
 
 
-
-
-
-
-
   
     return (
         <Router>
@@ -64,7 +60,7 @@ function App() {
                   <Home />
                </Route> 
                <Route exact path="/menu">
-                  <Menu />
+                  <Menu user={user} />
                </Route>
                <Route exact path="/signin">
                   <SignInPage onLogin={setUser} />
@@ -75,39 +71,14 @@ function App() {
                <Route exact path="/ratings">
                   <Ratings commentData={commentData} setCommentData={setCommentData} addComment={addComment}/>
                </Route>
+               <Route exact path="/orderhistory">
+                  <OrderHistory />
+               </Route>
               </Switch> 
           </Router>
       );    
     
-    // return (
-
-    //   <Router>
-    //       <Navbar user={user} setUser={setUser} />
-    //     <Switch>
-    //         <Route exact path="/">
-    //           <Home />
-    //         </Route>
-    //         <Route exact path="/concerts">
-    //           <ConcertHomePage />
-    //         </Route>
-    //       <Route exact path="/concerts/:id">
-    //           <Concert commentData={commentData} setCommentData={setCommentData} addComment={addComment}/>
-    //             {/* <Comments /> */}
-    //       </Route>  
-    //       <Route exact path="/comments">
-    //           <Comments commentData={commentData} setCommentData={setCommentData} addComment={addComment} />
-    //       </Route>
-    //       <Route    path="/comments/:id/edit"
-    //               render={({ match }) => (
-    //                     <CommentEditForm
-    //                         comment={commentData.find((comment) => comment.id === parseInt(match.params.id))}
-    //                         updateComment={updateComment}
-    //                     />
-    //               )}
-    //        /> 
-    //     </Switch> 
-    //   </Router>
-    // );
+  
   }
   
   export default App;
