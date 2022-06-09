@@ -41,6 +41,7 @@
 html, body
 {
     margin: 0px;
+    background-color: black;
 }
 
 header, footer
@@ -49,7 +50,7 @@ header, footer
     margin: 0 auto;
 	padding: 5em 3em;
 	text-align: center;
-    background: #555;
+    background: black;
     /* height: 75px; */
 
 }
@@ -495,7 +496,7 @@ div.highlightTextIn a:before
 } 
 
 .intro-home{
-  margin-top: 20px;
+  margin-top: 0px;
   text-align: center;
   width: 100%;
   position: position;
@@ -1009,4 +1010,12 @@ hr{
 
 .cart-about-image {
     height:30px
+}
+
+.home{
+    background-color: black;
+}
+
+.root{
+    background-color:black;
 }
