@@ -9,6 +9,7 @@ import SignInPage from "./Components/SignInPage";
 import Cart from "./Components/Cart";
 import Ratings from "./Components/Ratings";
 import OrderHistory from "./Components/OrderHistory";
+import RatingsEditForm from "./Components/RatingsEditForm";
 
 
 
@@ -35,7 +36,7 @@ function App() {
       .then((data) => setCommentData(data))
   }, [])
 
-  const addComment = (formData) => {
+  const addReview = (formData) => {
     fetch('/reviews', {
       method: 'POST',
       headers: {
@@ -45,11 +46,27 @@ function App() {
       body: JSON.stringify(formData)
     })
       .then(res => res.json())
-      .then(newComment => {
-        setCommentData(commentData.concat(newComment))
+      .then(newReview => {
+        setCommentData(commentData.concat(newReview))
       });
   }
 
+  const updateReview = (id, formData) => {
+    fetch(`/reviews/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(updatedComment => {
+        // pessimistically update the dog in state after we get a response from the api
+        setCommentData(commentData.map((review) => (review.id === parseInt(id) ? updatedComment : review)));
+        window.location.href = `/reviews`;
+      });
+    }
 
   
     return (
@@ -69,8 +86,16 @@ function App() {
                   <Cart />
                </Route>
                <Route exact path="/ratings">
-                  <Ratings commentData={commentData} setCommentData={setCommentData} addComment={addComment}/>
+                  <Ratings commentData={commentData} setCommentData={setCommentData} addReview={addReview}/>
                </Route>
+               <Route    path="/ratings/:id/edit"
+                render={({ match }) => (
+                    <RatingsEditForm
+                    comment={commentData.find((review) => review.id === parseInt(match.params.id))}
+                    updateReview={updateReview}
+                  />
+                )}
+              /> 
                <Route exact path="/orderhistory">
                   <OrderHistory />
                </Route>

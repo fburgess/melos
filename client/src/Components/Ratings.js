@@ -3,7 +3,7 @@ import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
 import RatingsCard from "./RatingsCard";
 import NewRatingForm from "./NewRatingForm";
 
-function Ratings({commentData, setCommentData, addComment}) {
+function Ratings({commentData, setCommentData, addReview}) {
     const history = useHistory();
     const location = useLocation();
     const match = useRouteMatch();
@@ -23,13 +23,15 @@ function Ratings({commentData, setCommentData, addComment}) {
 return (
     <>
     <div>
-      <NewRatingForm addComment={addComment} setCommentData={setCommentData} comment={commentData.find((comment) => comment.id === parseInt(match.params.id))}/>
+      <NewRatingForm addReview={addReview} setCommentData={setCommentData} comment={commentData.find((comment) => comment.id === parseInt(match.params.id))}/>
     </div>
     <div>
-        {commentData.map((comment) => <RatingsCard comment={commentData} id={comment.id} content={comment.content} rating={comment.rating} username={comment.cusotmer.username} menu_item={comment.menu_item.name} deleteComment={deleteComment} />)}
+        {commentData.map((review) => <RatingsCard comment={commentData} id={review.id} username={review.customer.username} content={review.content} rating={review.rating}  menu_item={review.menu_item.name} deleteComment={deleteComment} />)}
     </div>
     </>
   );
 }
 
 export default Ratings;
+
+// username={review.customer.name}

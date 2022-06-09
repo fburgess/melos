@@ -1,47 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 
-function NewRatingForm({addReview, setReviewData}) {
-    const [rating, setRating] = useState(1);
-    const [content, setContent] = useState();
-    const [customer_id, setUser_Id] = useState();
-    const [menu_item_id, setMenuItemId] = useState(1);
-    const [formErrors, setFormErrors] = useState([]);
+function RatingsEditForm({ review = {}, updateReview }) {
+  const [content, setContent] = useState(review.content);
+  const [rating, setRating] = useState(review.rating);
+  const [menu_item_id, setMenuItemId] = useState(review.menu_item_id);
+  
+  const {id} = useParams();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const handleSubmit = async (e) => {
-      
-    
-        addReview({
-          rating,
-          content,
-          customer_id,
-          menu_item_id
-        })
-      };
+    updateReview(id, {
+      content,
+      rating,
+      menu_item_id
+    });
+  };
 
+//   useEffect(() => {
+//     setContent(review.content);
+//     setRating(review.rating);
+//     setMenuItemId(review.menu_item_id);
+//   }, [review])
 
-    return (
-        <>
-      <h1 class="new-trip-form-title">Let Us Know How You Feel:</h1>
+  return (
+    <>
+    <h1 className="new-trip-form-title">Ain't Feeling The Same? Change Your Comment Below:</h1>
       <form
         onSubmit={handleSubmit}
         className="editForm"
       >
         <fieldset className="newCommentFieldset">
-            <label class="form-label" htmlFor="concert_id">
-            Dishes:
+            <label className="" htmlFor="concert_id">
+            Concert:
             </label>
-            <br></br>
             <select
             type="dropdown"
             className="dropdown"
             name="menu_item_id"
             id="menu_item_id"
-            value={menu_item_id}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setMenuItemId(e.target.value)}
-            }
+            value={review}
+            onChange={(e) => setMenuItemId(e.target.value)}
             >
             <option value= "1">Jerk Chicken</option>
             <option value= "2">Jerk Pork</option>
@@ -63,14 +63,13 @@ function NewRatingForm({addReview, setReviewData}) {
             <option value= "18">Carrot Juice</option>
             <option value= "19">Bottled Water</option>
             </select>
-            
         </fieldset>
-        <div>
-        <fieldset className="newCommentFieldset">
-          <label class="form-label" htmlFor="rating">
+
+        <fieldset class="newCommentFieldset">
+          <label className="" htmlFor="rating">
             Spice Level:
           </label>
-          <br></br>
+          
           <select
             type="dropdown"
             className="dropdown"
@@ -88,7 +87,7 @@ function NewRatingForm({addReview, setReviewData}) {
         </fieldset>
 
         <fieldset className="newCommentFieldset">
-          <label class="form-label" htmlFor="content">
+          <label className="" htmlFor="content">
             Comment:
           </label>
           <input
@@ -99,20 +98,18 @@ function NewRatingForm({addReview, setReviewData}) {
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
-          
         </fieldset>
 
         <button
           class="com-btn"
           type="submit"
         >
-          Submit Comment & Rating
+          Update
         </button>
-        </div>
+        
       </form>
     </>
   );
-    
 }
 
-export default NewRatingForm;
+export default RatingsEditForm;
